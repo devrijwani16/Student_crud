@@ -3,6 +3,8 @@
 
 #Remove-Item -Recurse -Force __pycache__
 
+#git init then # git add .
+
 from fastapi import FastAPI
 from routers import studentRouter
 from routers.studentRouter import studentRouter
