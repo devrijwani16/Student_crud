@@ -5,6 +5,8 @@
 
 #git init then # git add .
 
+# "Renamed main.py to student_crud.py" //  uvicorn student_crud:app --reload
+
 from fastapi import FastAPI
 from routers import studentRouter
 from routers.studentRouter import studentRouter
