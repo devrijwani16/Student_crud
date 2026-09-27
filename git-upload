@@ -1,0 +1,19 @@
+# remove react cache files
+Remove-Item -Recurse -Force __pycache__
+
+git init
+
+git add README.md
+
+git commit -m "Student CRUD Project"
+
+git config --global user.name "devrijwani16"
+git config --global user.email "devrijwani16@gmail.com"
+
+git branch -M main
+
+git remote add origin https://github.com/devrijwani16/Student_curd.git
+
+git push -u origin main
+
+
