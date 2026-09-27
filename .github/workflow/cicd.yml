@@ -1,0 +1,23 @@
+name: FastAPI CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - run: pip install -r requirements.txt
+
+      - run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+          ## Open the render -> settings -> deploy hook-> copy url 
+          ## Open github -> settings -> secrets and variables -> actions -> new repository secret -> add the url as RENDER_DEPLOY_HOOK_URL
