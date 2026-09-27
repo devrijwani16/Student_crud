@@ -1,6 +1,6 @@
 # Student CRUD API
 
-A simple Student CRUD Application built using FastAPI. This project demonstrates CRUD (Create, Read, Update, Delete) operations without using a database. Student data is stored temporarily in memory using a Python list.
+A simple Student CRUD Application built using FastAPI. This project demonstrates CRUD (Create, Read, Update, Delete) operations using local in-memory storage without any database.
 
 ---
 
@@ -58,13 +58,13 @@ pip install -r requirements.txt
 
 ## Run the Project
 
-Open terminal inside the project folder and run:
+Open terminal inside project folder and run:
 
 ```bash
 uvicorn main:app --reload
 ```
 
-If the server starts successfully, you will see:
+If successful:
 
 ```text
 INFO: Uvicorn running on http://127.0.0.1:8000
@@ -74,13 +74,13 @@ INFO: Uvicorn running on http://127.0.0.1:8000
 
 ## Swagger API Documentation
 
-Open your browser and visit:
+Open your browser:
 
 ```text
 http://127.0.0.1:8000/docs
 ```
 
-Swagger UI provides an interface to test all API endpoints.
+Swagger UI will open automatically where all APIs can be tested.
 
 ---
 
@@ -119,7 +119,7 @@ Returns all student records stored in memory.
 
 ### Get Student By ID
 
-Returns a specific student using the Student ID.
+Returns a specific student using Student ID.
 
 Example:
 
@@ -137,54 +137,89 @@ Deletes a student record using the Student ID.
 
 ### Storage
 
-This project uses:
+This project stores data temporarily using:
 
 ```python
 students = []
 ```
 
-to store data temporarily in memory.
+No database is used.
 
-**Note:** Since no database is used, all data is lost when the server stops.
+Data will be lost when the server stops.
+
+---
+
+## Git Cleanup
+
+Before pushing to GitHub, remove Python cache files:
+
+### Remove All __pycache__ Folders (Windows PowerShell)
+
+```powershell
+Get-ChildItem -Recurse -Directory -Filter "__pycache__" | Remove-Item -Recurse -Force
+```
+
+### Create .gitignore
+
+```text
+__pycache__/
+*.pyc
+venv/
+.env
+```
+
+This prevents unnecessary files from being uploaded to GitHub.
 
 ---
 
 ## Git Commands Used
 
-Initialize Git Repository:
+### Initialize Repository
 
 ```bash
 git init
 ```
 
-Add Project Files:
+### Add Project Files
 
 ```bash
 git add .
 ```
 
-Create Commit:
+### Create Commit
 
 ```bash
 git commit -m "Initial Student CRUD Project"
 ```
 
-Set Main Branch:
+### Create Main Branch
 
 ```bash
 git branch -M main
 ```
 
-Connect GitHub Repository:
+### Connect GitHub Repository
 
 ```bash
 git remote add origin <repository-url>
 ```
 
-Push Project to GitHub:
+### Push Project to GitHub
 
 ```bash
 git push -u origin main
+```
+
+### Check Repository Status
+
+```bash
+git status
+```
+
+### View Commit History
+
+```bash
+git log --oneline
 ```
 
 ---
